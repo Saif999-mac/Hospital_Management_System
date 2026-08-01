@@ -101,7 +101,7 @@ export function DashboardShell({
           <div className="ml-auto flex items-center gap-4">
             <NotificationBell />
             <ThemeToggle />
-            <UserButton afterSignOutUrl="/" />
+            <UserButton />
           </div>
         </header>
         <main className="flex-1 overflow-y-auto">{children}</main>

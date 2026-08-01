@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { Geist, Inter } from "next/font/google";
 import { cn } from "@/lib/utils";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata = {
   title: "Hospital_Management_System",
@@ -20,8 +20,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang="en" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
+    <ClerkProvider afterSignOutUrl="/">
+      <html
+        lang="en"
+        suppressHydrationWarning
+        className={cn("font-sans", inter.variable)}
+      >
         <body>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
