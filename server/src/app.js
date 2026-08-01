@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import helmet from "helmet";
 import morgan from "morgan";
-import mongoSanitize from "express-mongo-sanitize";
+
 import errorHandler from "./middleware/errorHandler.js";
 import { authLimiter } from "./middleware/rateLimiters.js";
 
@@ -30,7 +30,6 @@ app.use(morgan("dev"));
 app.use("/api/webhooks", authLimiter, webhookRoutes);
 
 app.use(express.json({ limit: "10kb" }));
-app.use(mongoSanitize());
 
 app.get("/health", (req, res) => res.json({ status: "ok" }));
 app.use("/", testRoutes);
